@@ -1,6 +1,7 @@
 import './App.css';
 import './Neat.css';
 import React, { useState } from 'react';
+import List from './List.js';
 
 function App() {
 
@@ -47,13 +48,10 @@ function App() {
     <button onClick={() => addItem()}>Add</button>
 
     {/* 3. List of items */}
-    <ul>
-      {items.map(item => {
-        return(
-          <li key={item.id}>{item.value} <button className='delete-button' onClick={() => deleteItem(item.id)}>❌</button></li>
-        )
-      })}
-    </ul>
+    <List
+      items={items}
+      deleteItem={deleteItem}
+    />
 
     </div>
   );
